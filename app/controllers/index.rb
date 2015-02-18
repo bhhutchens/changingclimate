@@ -15,7 +15,7 @@ get '/zipcode' do
 
  @average_annual_change = total / counter
 
- sunlight_url = 'https://congress.api.sunlightfoundation.com/legislators/locate?zip=' + params[:zipcode].to_s + '&apikey=db117ccbb61e4b82abc74d37a9b58ed2'
+ sunlight_url = 'https://congress.api.sunlightfoundation.com/legislators/locate?zip=' + params[:zipcode].to_s + '&apikey=' + ENV['SUNLIGHT_KEY']
  sunlight_response = HTTParty.get(sunlight_url)
  @reps = {}
  sunlight_response['results'].each do |rep|
@@ -30,5 +30,4 @@ get '/zipcode' do
  erb :zipcode
 
 end
-
 
