@@ -1,0 +1,56 @@
+<div>
+
+  <h1>
+    Your Congressional Representatives on <%= @search_term %>
+  </h1>
+
+  <div id='representative_info'>
+    <% @reps.each do |name, info| %>
+      <div class='individual_rep'>
+        <h3>
+          <%= name %> on <%= @search_term %>
+        </h3>
+        <% info[:rep_records].each do |record| %>
+          <h4>
+            Congressional Record Entry
+          </h4>
+          <h5>
+            Date: <%=record[:date] %>
+          </h5>
+          <% i = 0 %>
+          <% begin %>
+            <p>
+              <%= record[:congressional_record][i] %>
+            </p>
+            <% i += 1 %>
+          <% end while i < 5 %>
+          <h5>
+            <a href='<%= record[:reference_url] %>'>
+              More Information
+            </a>
+          </h5>
+        <% end %>
+        <div id='tweet_box'>
+          <form action='/tweet' method='post'>
+            <input type='textarea' name='tweet' value='@<%= info[:twitter_id] %>'>
+            <input type='submit' value='Submit'>
+          </form>
+        </div>
+      </div>
+    <% end %>
+  </div>
+
+<!--   <div id='sunlight_email_form'>
+    <form action='mailto:bhhutchens@gmail.com' enctype='text/plain' method='get'>
+      <input type='textarea' name='body' placeholder='your message'>
+      <input type='submit' value='Submit'>
+    </form>
+  </div> -->
+
+<!--   <div id='tweet_box'>
+    <form action='/tweet' method='post'>
+      <input type='textarea' name='tweet' placeholder='tweet your representative!'>
+      <input type='submit' value='Submit'>
+    </form>
+  </div> -->
+</div>
