@@ -70,3 +70,13 @@ post '/tweet' do
   @client.update(params[:tweet])
   redirect '/search'
 end
+
+post '/ajax/tweet' do
+  content_type :json
+  user = User.find_by(screen_name: session[:user_screen_name])
+  user.tweet_count += 1
+  user.save
+  @client = client(session[:access_token], session[:secret_token])
+  @client.update(params[:tweet])
+  {tweet: params[:tweet]}.to_json
+end

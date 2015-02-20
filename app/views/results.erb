@@ -31,7 +31,7 @@
           </h5>
         <% end %>
         <div id='tweet_box'>
-          <form action='/tweet' method='post'>
+          <form action='/tweet' method='post' class='tweet_form'>
             <input type='textarea' name='tweet' value='@<%= info[:twitter_id] %>'>
             <input type='submit' value='Submit'>
           </form>
