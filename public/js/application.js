@@ -16,4 +16,10 @@ $(document).ready(function() {
 
   });
 
+  $('#search_form').on('submit', function(event){
+    var $button = $(event.target).children().last()
+    $button.attr('value', 'Searching...')
+    $button.attr('disabled', 'true')
+  });
+
 });
