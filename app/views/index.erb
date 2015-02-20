@@ -1,17 +1,19 @@
-<div>
-  <h3>
-    <a href='/oauth'>
+<div id='index'>
+  <a href='/oauth'>
+    <h3>
       Sign in with Twitter!
-    </a>
-  </h3>
-  <h1>
-    Top Tweeters @Congress
-  </h1>
-  <ul>
-    <% @top_users.each do |user| %>
-      <li>
-        <img src='<%= user.profile_image_url_https %>' > <%= user.tweet_count %> Tweets: @<%= user.screen_name %>
-      </li>
-    <% end %>
-  </ul>
+    </h3>
+  </a>
+  <div id='top_tweeters'>
+    <h2>
+      Top Tweeters @Congress
+    </h2>
+    <ul>
+      <% @top_users.each do |user| %>
+        <li>
+          <img src='<%= user.profile_image_url_https %>' > <%= user.tweet_count %> Tweets: @<%= user.screen_name %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 </div>

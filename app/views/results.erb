@@ -1,4 +1,4 @@
-<div>
+<div id='results'>
 
   <h1>
     Your Congressional Representatives on <%= @search_term %>
@@ -7,33 +7,37 @@
   <div id='representative_info'>
     <% @reps.each do |name, info| %>
       <div class='individual_rep'>
-        <h3>
+        <h2>
           <%= name %> on <%= @search_term %>
-        </h3>
+        </h2>
         <% info[:rep_records].each do |record| %>
-          <h4>
-            Congressional Record Entry
-          </h4>
-          <h5>
-            Date: <%=record[:date] %>
-          </h5>
-          <% i = 0 %>
-          <% begin %>
-            <p>
-              <%= record[:congressional_record][i] %>
-            </p>
-            <% i += 1 %>
-          <% end while i < 5 %>
-          <h5>
-            <a href='<%= record[:reference_url] %>'>
-              More Information
-            </a>
-          </h5>
+          <div class='individual_entry'>
+            <h3>
+              Congressional Record Entry
+            </h3>
+            <h4>
+              Date: <%=record[:date] %>
+            </h4>
+            <div class='record_text'>
+              <% i = 0 %>
+              <% begin %>
+                <p>
+                  <%= record[:congressional_record][i] %>
+                </p>
+                <% i += 1 %>
+              <% end while i < 5 %>
+            </div>
+            <h4>
+              <a href='<%= record[:reference_url] %>'>
+                More Information
+              </a>
+            </h4>
+          </div>
         <% end %>
         <div id='tweet_box'>
           <form action='/tweet' method='post' class='tweet_form'>
             <input type='textarea' name='tweet' value='@<%= info[:twitter_id] %>'>
-            <input type='submit' value='Submit'>
+            <input class='button' type='submit' value='Tweet!'>
           </form>
         </div>
       </div>
@@ -41,10 +45,10 @@
   </div>
 
   <div id='search_more'>
-    <h4>
-      <a href='/search'>
-        Search another topic.
-      </a>
-    </h4>
+    <a href='/search'>
+      <h2>
+        @Congress more!
+      </h2>
+    </a>
   </div>
 </div>
