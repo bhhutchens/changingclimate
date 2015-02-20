@@ -1,5 +1,10 @@
 get '/' do
+  @top_users = User.all.order(tweet_count: :desc).limit(10)
   erb :index
+end
+
+get '/search' do
+  erb :search
 end
 
 get '/results' do
@@ -52,12 +57,16 @@ get '/oauth/callback' do
   session[:secret_token] = access_token.secret
   @client = client(session[:access_token], session[:secret_token])
   info = @client.verify_credentials
-  User.create(screen_name: info['screen_name'], profile_image_url_https: info['profile_image_url_https'])
-  redirect '/'
+  User.create(screen_name: info['screen_name'], profile_image_url_https: info['profile_image_url_https'], tweet_count: 0)
+  session[:user_screen_name] = User.find_by(screen_name: info['screen_name']).screen_name
+  redirect '/search'
 end
 
 post '/tweet' do
+  user = User.find_by(screen_name: session[:user_screen_name])
+  user.tweet_count += 1
+  user.save
   @client = client(session[:access_token], session[:secret_token])
   @client.update(params[:tweet])
-  redirect '/results'
+  redirect '/search'
 end

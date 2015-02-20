@@ -24,32 +24,33 @@
             </p>
             <% i += 1 %>
           <% end while i < 5 %>
-          <!--     <% record[:congressional_record].each do |paragraph| %>
-            <p>
-              <%= paragraph %>
-            </p>
-          <% end %> -->
           <h5>
             <a href='<%= record[:reference_url] %>'>
               More Information
             </a>
           </h5>
         <% end %>
+        <div id='tweet_box'>
+          <form action='/tweet' method='post'>
+            <input type='textarea' name='tweet' value='@<%= info[:twitter_id] %>'>
+            <input type='submit' value='Submit'>
+          </form>
+        </div>
       </div>
     <% end %>
   </div>
 
-  <div id='sunlight_email_form'>
+<!--   <div id='sunlight_email_form'>
     <form action='mailto:bhhutchens@gmail.com' enctype='text/plain' method='get'>
       <input type='textarea' name='body' placeholder='your message'>
       <input type='submit' value='Submit'>
     </form>
-  </div>
+  </div> -->
 
-  <div id='tweet_box'>
+<!--   <div id='tweet_box'>
     <form action='/tweet' method='post'>
       <input type='textarea' name='tweet' placeholder='tweet your representative!'>
       <input type='submit' value='Submit'>
     </form>
-  </div>
+  </div> -->
 </div>
