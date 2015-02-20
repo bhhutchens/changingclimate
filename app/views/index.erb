@@ -1,9 +1,15 @@
 <div>
+  <h3>
+    <a href='/oauth'>
+      Sign in with Twitter!
+    </a>
+  </h3>
   <h1>
-    Start by entering your zipcode.
+    Start by entering what you're interested in and your zipcode.
   </h1>
-  <form action='/zipcode' method='get'>
+  <form action='/results' method='get'>
+    <input type='text' name='search_term' placeholder='What are you interested in?'>
     <input type='text' name='zipcode' placeholder='Zipcode'>
-    <input type='submit' value='Submit'>
+    <input type='submit' value='Search Congress'>
   </form>
 </div>

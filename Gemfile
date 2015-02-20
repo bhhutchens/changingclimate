@@ -16,6 +16,7 @@ gem 'rake'
 gem 'shotgun'
 gem 'httparty'
 gem 'dotenv'
+gem 'twitter_oauth'
 
 group :test do
   gem 'shoulda-matchers'

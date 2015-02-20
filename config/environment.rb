@@ -21,6 +21,7 @@ require "sinatra/reloader" if development?
 require 'erb'
 require 'httparty'
 require 'dotenv'
+require 'twitter_oauth'
 
 # to hide authentication keys
 Dotenv.load
