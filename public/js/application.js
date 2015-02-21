@@ -11,7 +11,7 @@ $(document).ready(function() {
       type: 'post'
     })
     .done(function(data){
-      $(event.target).parent().parent().fadeOut('slow');
+      $(event.target).parent().parent().slideUp(1500, 'swing');
     });
 
   });

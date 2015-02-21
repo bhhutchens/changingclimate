@@ -38,6 +38,11 @@ html {
 #index h2 {
   display: block;
   text-align: center;
+}
+
+#index #top_tweeters h2 {
+  display: block;
+  text-align: center;
   padding-top: 1em;
 }
 
@@ -66,6 +71,7 @@ html {
   width: 40%;
   margin-left: auto;
   margin-right: auto;
+  margin-bottom: 2em;
 }
 
 #search {
@@ -151,20 +157,23 @@ html {
   width: 95%;
 }
 
-#results input {
+#results textarea {
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 90%;
-  height: 400%;
-  text-align: center;
+  text-align: left;
   margin-bottom: 1em;
   -webkit-border-radius: 5px;
 }
 
 #results .button {
-  width: 40%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+  text-align: center;
   background-color: #afc2db;
+  -webkit-border-radius: 5px;
 }
 
 #results form {

@@ -36,7 +36,8 @@
         <% end %>
         <div id='tweet_box'>
           <form action='/tweet' method='post' class='tweet_form'>
-            <input type='textarea' name='tweet' value='@<%= info[:twitter_id] %>'>
+            <!-- <input type='textarea' name='tweet' value='@<%= info[:twitter_id] %>'> -->
+            <textarea rows='3' cols='50' name='tweet'>@<%= info[:twitter_id] %></textarea>
             <input class='button' type='submit' value='Tweet!'>
           </form>
         </div>
