@@ -1,0 +1,192 @@
+html {
+  font-family: 'Source Sans Pro', sans-serif;
+  background-color: #6a7991;
+}
+
+#layout #logo {
+  margin: 0 auto;
+  margin-top: 1em;
+  display: block;
+}
+
+#index h3 {
+  display: block;
+  text-align: center;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #afc2db;
+  width: 20%;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+#index a {
+  text-decoration: none;
+}
+
+#layout h1 {
+  display: block;
+  text-align: center;
+  margin-top: .15em;
+  margin-bottom: .25em;
+  font-family: 'Yanone Kaffeesatz', sans-serif;
+  font-size: 500%;
+}
+
+#index h2 {
+  display: block;
+  text-align: center;
+}
+
+#index #top_tweeters h2 {
+  display: block;
+  text-align: center;
+  padding-top: 1em;
+}
+
+#index ul {
+  display: inline;
+  text-align: center;
+  list-style-type: none;
+}
+
+#index li {
+  margin-bottom: 1em;
+  background-color: #d0e3ed;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#index li img {
+  vertical-align: middle;
+}
+
+#index #top_tweeters {
+  background-color: #bab4b6;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 2em;
+}
+
+#search {
+  background-color: #bab4b6;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#search input {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1.25em;
+  width: 40%;
+  text-align: center;
+  margin-bottom: 1em;
+  -webkit-border-radius: 5px;
+}
+
+#search .button {
+  background-color: #afc2db;
+}
+
+#search h1 {
+  display: block;
+  text-align: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+#search form {
+  padding-bottom: 1em;
+}
+
+#results {
+  background-color: #bab4b6;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#results .individual_rep {
+  background-color: #ebebeb;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#results h1 {
+  padding-top: 1em;
+  text-align: center;
+}
+
+#results h2 {
+  background-color: #afc2db;
+  text-align: center;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+#results .individual_entry {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #d0e3ed;
+  margin-bottom: 3em;
+}
+
+#results .individual_entry h3{
+  text-align: center;
+  padding-top: 1em;
+}
+
+#results .individual_entry h4{
+  text-align: center;
+  padding-bottom: 1em;
+}
+
+#results .record_text {
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+}
+
+#results textarea {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  margin-bottom: 1em;
+  -webkit-border-radius: 5px;
+}
+
+#results .button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20%;
+  text-align: center;
+  background-color: #afc2db;
+  -webkit-border-radius: 5px;
+}
+
+#results form {
+  padding-bottom: 2em;
+}
+
+#results #search_more a {
+  text-decoration: none;
+}
+
+#results #search_more {
+  margin-bottom: 2em;
+  width: 30%;
+  margin-left: auto;
+  margin-right: auto;
+}

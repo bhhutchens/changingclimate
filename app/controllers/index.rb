@@ -30,10 +30,12 @@ get '/results' do
     max = 3
     i = 0
     begin
-      congressional_record = capitolwords_response['results'][i]['speaking']
-      reference_url = capitolwords_response['results'][i]['capitolwords_url']
-      date = capitolwords_response['results'][i]['date']
-      rep_records.push({congressional_record: congressional_record, reference_url: reference_url, date: date})
+      if capitolwords_response['results'][i]
+        congressional_record = capitolwords_response['results'][i]['speaking']
+        reference_url = capitolwords_response['results'][i]['capitolwords_url']
+        date = capitolwords_response['results'][i]['date']
+        rep_records.push({congressional_record: congressional_record, reference_url: reference_url, date: date})
+      end
       i += 1
     end while i < max
     @reps[name][:rep_records] = rep_records
@@ -69,4 +71,14 @@ post '/tweet' do
   @client = client(session[:access_token], session[:secret_token])
   @client.update(params[:tweet])
   redirect '/search'
+end
+
+post '/ajax/tweet' do
+  content_type :json
+  user = User.find_by(screen_name: session[:user_screen_name])
+  user.tweet_count += 1
+  user.save
+  @client = client(session[:access_token], session[:secret_token])
+  @client.update(params[:tweet])
+  {tweet: params[:tweet]}.to_json
 end
